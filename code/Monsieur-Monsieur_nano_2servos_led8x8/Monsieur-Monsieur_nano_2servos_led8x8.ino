@@ -2,6 +2,8 @@
 
 #include <LedControl.h>
 
+// TODO : mieux commenter :-)
+
 Servo servoG, servoD;
 
 //VAR global
