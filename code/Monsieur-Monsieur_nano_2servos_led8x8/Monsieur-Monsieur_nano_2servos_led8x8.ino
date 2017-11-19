@@ -2,8 +2,6 @@
 
 #include <LedControl.h>
 
-// TODO : mieux commenter :-)
-
 Servo servoG, servoD;
 
 //VAR global
@@ -12,6 +10,7 @@ int ob[] = {9, 9, 9, 9, 9, 9}; //stockage des LEDs
 int duree_dent = 20;
 boolean ok;
 //servo
+
 int servoG_home = 10;
 int servoD_home = 170;
 int servoG_repos = 145;
@@ -19,8 +18,8 @@ int servoD_repos = 35;
 int servoG_sol = 175;
 int servoD_sol = 5;
 int servoG_etat, servoD_etat;
+int vitesse_servo = 10;
 
-int vitesse_servo = 50;
 //LED
 int DIN = 12;
 int CS =  11;
@@ -50,15 +49,12 @@ byte Bisou2[8] = {0x38, 0x6C, 0xC6, 0x46, 0x46, 0xC6, 0x6C, 0x38};
 
 LedControl lc = LedControl(DIN, CLK, CS, 0);
 
-/*
-  byte [8]= {0x38,0x6C,0xC6,0x46,0x46,0xC6,0x6C,0x38};
-*/
 
 //boucle
 boolean fin = true;
 void setup() {
-bootlc();
-  printByte(Point);
+  bootlc();
+   printByte(Point);
   delay(500);
   servoG.attach(5);
   servoD.attach(7);
@@ -74,8 +70,8 @@ bootlc();
 }
 
 void loop() {
-// bootlc();
-printByte(Smile);
+  bootlc();
+  printByte(Smile);
   delay(10);
   for (int i = 0; i < 3; i++) {
     clack();
@@ -88,50 +84,50 @@ void ModeNormal() {
   Serial.print("normalMode");
   delay(500);
 
-clack();
+  clack();
   delay(1000);
 
   //2 cycles led de 30 sec
   for (int i = 0; i < 2; i++) {
 
-    ordreBrossage (5);//6*2*5sec= 60sec
+    brossage(5);//6*2*5sec= 60sec
   };
   //pause cracha
   crache();
-  
+
   //2 cycles led de 24 sec
   for (int i = 0; i < 2; i++) {
 
-    ordreBrossage (4);//6*2*4= 48sec / total 108
+    brossage(4);//6*2*4= 48sec / total 108
   };
   //pause cracha
   crache();
-  
+
   //3 cycles led de 18 sec
   for (int i = 0; i < 3; i++) {
 
 
-    ordreBrossage (3);//6*3*3= 54sec / total 162
+    brossage(3);//6*3*3= 54sec / total 162
   };
   //2 cycles led de 12 sec
   for (int i = 0; i < 2; i++) {
-    ordreBrossage (2);;//6*2*2= 24 sec / total 186
+    brossage(2);;//6*2*2= 24 sec / total 186
   };
 
   //cycle led de 6 sec
   for (int i = 0; i < 2; i++) {
-    ordreBrossage (1);//6*1*1000= 6 sec / total 198 soit 3min et 18sec
+    brossage(1);//6*1*1000= 6 sec / total 198 soit 3min et 18sec
   };
   //cycle led de fin
   crache();
-  fin();
+  modeFin();
 
-
-  }
-  Serial.println(":D");
-
-
+Serial.println(":D");
 }
+
+
+
+
 void crache() {
   lc.clearDisplay(0);
   delay(10);
@@ -159,8 +155,7 @@ void clack() {
 
 }
 
-void printByte(byte character [])
-{
+void printByte(byte character []){
 
   for (int i = 0; i < 8; i++)
   {
@@ -168,9 +163,9 @@ void printByte(byte character [])
   };
 }
 
-void brossage() {
+void brossage(int duree_dent) {
 
-  ordreBrossage(int duree_dent);
+  ordreBrossage();
   delay(500);
   for (int a = 0; a < 6; a++) {
 
@@ -300,8 +295,7 @@ void pieds(int GouDouCouN) {
       servoG_M(servoG_home);
       servoD_M(servoD_home);
       break;
-
-  };
+  }
 }
 
 void servoD_M(int servoD_etat_wanted) {
@@ -341,8 +335,8 @@ void servoG_M(int servoG_etat_wanted) {
     };
   }
 }
-void ModeFin(){
-	clack();
+void modeFin() {
+  clack();
   lc.clearDisplay(0);
   delay(10);
   pieds(4);
@@ -358,7 +352,7 @@ void ModeFin(){
   delay(10);
   while (fin) {
 
-	};
+  };
 }
 void randHOME() {
   int randa1 = analogRead(0);
@@ -367,11 +361,12 @@ void randHOME() {
   ;
 }
 
-void bootlc(){
-  lc.shutdown(0, false); 
+void bootlc() {
+  lc.shutdown(0, false);
   delay(50);  //The MAX72XX is in power-saving mode on startup
   lc.setIntensity(0, 10);     // Set the brightness to maximum value
   delay(50);
   lc.clearDisplay(0);         // and clear the display
   // printByte(Point);
-  delay(50);};
+  delay(50);
+};
