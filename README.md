@@ -3,12 +3,24 @@
 
 ## Pourquoi adpoter un Monsieur Monsieur ?
 
-    Il accompagne de maniËre ludique les 3 minutes nÈcessaires au brossage de dents de vos enfants (et le vÙtre en cachette). Un enfant de 3 ans peut dÈj‡ utiliser Monsieur Monsieur.
-    Il est un premier pas vers líÈlectronique et la programmation, dËs 8 ans.
+    Il accompagne de mani√®re ludique les 3 minutes n√©cessaires au brossage de dents de vos enfants (et le v√¥tre en cachette). Un enfant de 3 ans peut d√©j√† utiliser Monsieur Monsieur.
+    Il est un premier pas vers l‚Äô√©lectronique et la programmation, d√®s 8 ans.
     Il est personnalisable, upgradable et hackable. Il est fun quoi !
 
-Et plein d'autres choses que nous allons crÈer avec vous :)
+Et plein d'autres choses que nous allons cr√©er avec vous :)
 
-## Comment Áa fonctionne un Monsieur Monsieur ?
+## Comment √ßa fonctionne un Monsieur Monsieur ?
 
 coming soon
+
+## Vid√©os
+
+les vid√©os de Monsieur Monsieur 
+https://www.youtube.com/playlist?list=PLgdqAV58g71_ZiLUwpKdSpJxcmvXj_Yhv
+
+## Blog & FB
+Blog
+http://leresteux.net/monsieurmonsieur
+
+Facebook
+https://www.facebook.com/projetmonsieurmonsieur
